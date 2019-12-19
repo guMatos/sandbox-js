@@ -14,8 +14,8 @@ router.post('/create', (req, res) => {
 	})
 
 	result.save((err) => {
-		if (err) res.status(500).send('Could not save object to DB')
-		else res.send('Object created succesfully')
+		if (err) return res.status(500).send({error: err})
+		return res.send('Object created succesfully')
 	})
 })
 

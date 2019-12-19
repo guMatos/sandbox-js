@@ -11,8 +11,8 @@ router.get('/search/:cpf', (req, res) => {
 	var cpf = req.params.cpf
 
 	person.findOne({"cpf": cpf}).then(e => {
-		if (!e) res.status(404).send('Person with cpf ' + cpf + ' not found')
-		else res.send(e)
+		if (!e) return res.status(404).send('Person with cpf "' + cpf + '" not found')
+		return res.send(e)
 	})
 })
 
