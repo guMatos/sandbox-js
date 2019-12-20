@@ -6,4 +6,4 @@ var personSchema = new mongoose.Schema({
 	cpf: { type: String, required: true, maxlength: 11, minlength: 11, unique: true, dropDups: true }
 })
 
-module.exports = mongoose.model('person', personSchema)
+module.exports = mongoose.model('Person', personSchema)

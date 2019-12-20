@@ -1,13 +1,13 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-const person = require('../models/person')
+const Person = require('../models/person')
 
 const router = express.Router()
 router.use(bodyParser.urlencoded({ extended: false }))
 router.use(bodyParser.json())
 
 router.post('/create', (req, res) => {
-	var result = new person({
+	var result = new Person({
 		name: req.body.name,
 		age: req.body.age,
 		cpf: req.body.cpf
